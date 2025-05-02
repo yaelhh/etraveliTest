@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: etraveli.regressionTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 196.7 s <<< FAILURE! -- in etraveli.regressionTest
+etraveli.regressionTest.SelfTransferFilter -- Time elapsed: 16.47 s <<< ERROR!
+java.lang.RuntimeException: Test SelfTransferFilter() fallido: se encontró una opción que no es un vuelo directo 1 Cambio
+	at etraveli.section.filterScales.SelfTransferFight(filterScales.java:128)
+	at etraveli.regressionTest.SelfTransferFilter(regressionTest.java:83)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
