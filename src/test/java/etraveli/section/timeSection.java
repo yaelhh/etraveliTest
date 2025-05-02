@@ -57,12 +57,12 @@ public class timeSection {
             int minutes = Integer.parseInt(parts[1]);
 
             if (hours < hourValue || (hours == hourValue && minutes < minuteValue)) {
-                throw new RuntimeException("Test fallido: Se encontró un vuelo con salida antes de las " + hourValue
+                throw new RuntimeException("Test failed: A flight was found departing before " + hourValue
                         + ":" + minuteValue + " -> " + timeText);
             }
         }
 
-        System.out.println("Test completado correctamente: Todos los vuelos vuelven antes de las  " + valueText + ".");
+        System.out.println("Test completed successfully: All flights depart after " + valueText + ".");
     }
 
     public void resetValueDepartureSection() {
@@ -98,9 +98,9 @@ public class timeSection {
         int newValueIzq = Integer.parseInt(handle.evaluate("el => el.value").toString());
 
         if (value == newValueIzq) {
-            throw new RuntimeException("Test fallido: No se modificaron los valores al resetearlos.");
+            throw new RuntimeException("Test failed: The values were not modified when resetting them.");
         } else {
-            System.out.println("Test completado correctamente: Los valores han sido reseteados correctamente.");
+            System.out.println("Test completed successfully: The values have been reset correctly.");
         }
     }
 
@@ -142,10 +142,10 @@ public class timeSection {
 
             if (hour > hourValue || (hour == hourValue && minute > minuteValue)) {
                 page.waitForTimeout(3000);
-                throw new RuntimeException("Test fallido: Vuelo llega después de -> " + timeText);
+                throw new RuntimeException("Test failed: A flight arrives after -> " + timeText);
             }
         }
-        System.out.println("Test completado correctamente: Todos los vuelos llegan antes o a las " + value);
+        System.out.println("Test completed successfully: All flights arrive on or before " + value);
     }
 
 }

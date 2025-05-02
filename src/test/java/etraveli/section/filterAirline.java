@@ -23,12 +23,12 @@ public class filterAirline {
     for (Locator logo : logos) {
       String alt = logo.getAttribute("alt");
       if ("Aerolineas Argentinas".equals(alt)) {
-        throw new RuntimeException("Test fallido: se encontró un vuelo de 'Aerolineas Argentinas'");
+        throw new RuntimeException("Failed test: a flight from 'Aerolineas Argentinas' was found.");
       }
     }
 
     System.out
-        .println("Test completado correctamente: todos los vuelos verificados, ninguno es de Aerolíneas Argentinas.");
+        .println("Test completed successfully: all flights were verified, and none are from Aerolíneas Argentinas.");
 
   }
 
@@ -40,12 +40,12 @@ public class filterAirline {
     for (Locator logo : logos) {
       String alt = logo.getAttribute("alt");
       if (!"Aerolineas Argentinas".equals(alt)) {
-        throw new RuntimeException("Test fallido: Se encontro  un vuelo diferente a Aerolíneas Argentinas");
+        throw new RuntimeException("Failed test: a flight different from 'Aerolineas Argentinas' was found.");
       }
     }
 
     System.out
-        .println("Test completado correctamente: todos los vuelos verificados, todos son de Aerolíneas Argentinas.");
+        .println("Test completed successfully: all flights were verified, and all are from Aerolíneas Argentinas.");
 
   }
 
@@ -62,9 +62,9 @@ public class filterAirline {
     // más': " + AirlinesNewList);
 
     if (AirlinesList == AirlinesNewList) {
-      throw new RuntimeException("No se encontraron nuevas aerolíneas al hacer clic en 'Mostrar más'.");
+      throw new RuntimeException("No new airlines were found after clicking 'Show more'.");
     }
     System.out
-        .println("Test completado correctamente: Se encontraron nuevas aerolíneas al hacer clic en 'Mostrar más'.");
+        .println("Test completed successfully: new airlines were found after clicking 'Show more'.");
   }
 }

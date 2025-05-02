@@ -33,7 +33,7 @@ public class regressionTest {
      
     @Test
     void verifyApi() {
-        System.out.println("----En este test validaremos que la api nos responda 200----");
+        System.out.println("----In this test, we will validate that the API responds with a 200 status code.----");
 
         firstPage.firstSearch();
         api apiClass = new api(page);
@@ -42,7 +42,7 @@ public class regressionTest {
 
      @Test
     void maximumFilterOneScale() {
-        System.out.println("----En este test validaremos el filtro de maximo una escala----");
+        System.out.println("----In this test, we will validate the filter for a maximum of one stopover.----");
 
         firstPage.firstSearch();
         filterScales filterScalesPage = new filterScales(page);
@@ -52,14 +52,14 @@ public class regressionTest {
         
     @Test
     void FilterDirectFlight() {
-        System.out.println("----En este test validaremos el filtro de vuelos directos----");
+        System.out.println("----In this test, we will validate the non-stop flights filter.----");
         firstPage.firstSearch();
         filterScales filterScalesPage = new filterScales(page);
         filterScalesPage.DirectFight();     
     }
     @Test
     void AllFlight() {
-        System.out.println("----En este test validaremos el filtro Cantidad de escalas todos los vuelos----");
+        System.out.println("----In this test, we will validate the stopovers filter with the 'All flights' option selected.----");
         firstPage.firstSearch();
         filterScales filterScalesPage = new filterScales(page);
         filterScalesPage.AllFight();     
@@ -67,7 +67,7 @@ public class regressionTest {
     
   @Test
   void ResetFilter() {
-      System.out.println("----En este test validaremos el restablecimiento del filtro----");
+      System.out.println("----In this test, we will validate the reset functionality of the filter.----");
       firstPage.firstSearch();
       filterScales filterScalesPage = new filterScales(page);
       filterScalesPage.resetFilter();     
@@ -77,7 +77,7 @@ public class regressionTest {
   void SelfTransferFilter() {
     // Yo entiendo que "Mostrar vuelos sin Autotransferencia" es lo mismo que vuelos directos osea sin escalas
     // Este caso falla porque el boton no hace este filtro, quizas se espera otra cosa de este botòn y yo necesite mas informacion. 
-      System.out.println("----En este test validaremos el filtro de vuelos con auto-transferencia ----");
+      System.out.println("----In this test, we will validate the filter for flights with self-transfer. ----");
       firstPage.firstSearch();
       filterScales filterScalesPage = new filterScales(page);
       filterScalesPage.SelfTransferFight();     
@@ -85,7 +85,7 @@ public class regressionTest {
        
   @Test
   void changeFilterDownPrice() {
-          System.out.println("----En este test validaremos el filtro de precio----");
+          System.out.println("----In this test, we will validate the price filter.----");
       firstPage.firstSearch();
       filterPrice filterPricePage = new filterPrice(page);
       filterPricePage.ChangeDownPrice();  
@@ -93,14 +93,14 @@ public class regressionTest {
  
   @Test
   void filterWithoutAirline() {
-    System.out.println("----En este test validaremos que no se muestre la aerolinea que no fue seleccionada----");
+    System.out.println("----In this test, we will validate that unselected airlines are not shown.----");
 firstPage.firstSearch();
 filterAirline filterAirlinePage = new filterAirline(page);
 filterAirlinePage.filterWithoutThisAirline();
   }
   @Test
   void filterByAirline() {
-    System.out.println("----En este test validaremos que muestra solo la aerolinea seleccionada----");
+    System.out.println("----In this test, we will validate that only the selected airline is displayed.----");
 firstPage.firstSearch();
 filterAirline filterAirlinePage = new filterAirline(page);
 filterAirlinePage.filterByAirline();
@@ -108,7 +108,7 @@ filterAirlinePage.filterByAirline();
 
   @Test
   void filterByAirlineShowMore() {
-    System.out.println("----En este test validaremos el mostrar mas ----");
+    System.out.println("----In this test, we will validate the show more functionality.----");
 firstPage.firstSearch();
 filterAirline filterAirlinePage = new filterAirline(page);
 filterAirlinePage.filterByAirlineShowMore();
@@ -116,7 +116,7 @@ filterAirlinePage.filterByAirlineShowMore();
   
 @Test
 void DepartureSection() {
-    System.out.println("----En este test validaremos cambiar de hora del tramo de salida----");
+    System.out.println("----In this test, we will validate changing the departure time of the segment----");
     firstPage.firstSearch();
     timeSection timeSection = new timeSection(page);
      timeSection.changeDepartureSection();
@@ -125,7 +125,7 @@ void DepartureSection() {
 
 @Test
 void ArribalSection() {
-    System.out.println("----En este test validaremos cambiar de hora del tramo de arribo----");
+    System.out.println("----In this test, we will validate changing the arrival time of the segment----");
     firstPage.firstSearch();
     timeSection timeSection = new timeSection(page);
     timeSection.changeArrivalSection();
@@ -134,7 +134,7 @@ void ArribalSection() {
 
     @Test
 void resetValueDepartureSection() {
-    System.out.println("----En este test validaremos que los valores sean reseteados correctamente----");
+    System.out.println("----In this test, we will validate that the values are reset correctly----");
     firstPage.firstSearch();
     timeSection timeSection = new timeSection(page);
     timeSection.resetValueDepartureSection();
@@ -143,7 +143,7 @@ void resetValueDepartureSection() {
 
 @Test
 void changeTravelTime() {
-    System.out.println("----En este test validaremos el cambio de hora total del viaje----");
+    System.out.println("----In this test, we will validate changing the total travel time----");
     firstPage.firstSearch();
     traverlTime traverlTime = new traverlTime(page);
     traverlTime.ChangeTime();

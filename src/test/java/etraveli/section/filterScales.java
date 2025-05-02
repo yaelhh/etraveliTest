@@ -31,12 +31,12 @@ public class filterScales {
                 String texto = escala.innerText().trim();
                 // System.out.println("comienzo a validar: " + texto);
                 if (!(texto.equals("Vuelo directo") || texto.equals("1 Cambio"))) {
-                    System.out.println("Escala inválida encontrada: " + texto);
-                    throw new RuntimeException("Test fallido: se encontró una opción con más de una escala → " + texto);
+                    System.out.println("Invalid stopover found " + texto);
+                    throw new RuntimeException("Failed test: an option with more than one stopover was found " + texto);
                 }
             }
         }
-        System.out.println("Test completado: todas las opciones tienen 1 o 0 escalas.");
+        System.out.println("Test completed: all options have 1 or 0 stopovers.");
     }
 
     public void DirectFight() {
@@ -54,11 +54,11 @@ public class filterScales {
                 // System.out.println("comienzo a validar: " + texto);
                 if (!(texto.equals("Vuelo directo"))) {
                     throw new RuntimeException(
-                            "Test fallido: se encontró una opción que no es un vuelo directo → " + texto);
+                            "Failed test: an option that is not a direct flight was found " + texto);
                 }
             }
         }
-        System.out.println("Test completado: todas las opciones son vuelos directos.");
+        System.out.println("Test completed: all options are direct flights.");
     }
 
     public void AllFight() {
@@ -73,11 +73,11 @@ public class filterScales {
 
         if (mostrados != total) {
             throw new RuntimeException(
-                    "Test fallido: Los vuelos mostrados (" + mostrados + ") no coinciden con el total (" + total
+                    "Failed test: the displayed flights (" + mostrados + ") do not match the total (" + total
                             + ").");
         }
 
-        System.out.println("Test completado correctamente: Todos los vuelos son visibles. Mostrados: " + mostrados
+        System.out.println("Test completed successfully: All flights are visible. Displayed: " + mostrados
                 + ", Total: " + total);
     }
 
@@ -92,23 +92,23 @@ public class filterScales {
 
         if (mostrados == total) {
             throw new RuntimeException(
-                    "Test fallido: No se filtro por los vuelos directos o todos los vuelos son directos.");
+                    "Failed test: No flights were filtered for direct flights or all flights are direct.");
         }
         page.locator("[data-testid='resultPage-filterHeader-MAX_STOPSFilterResetButton-button']").click();
         boolean isChecked = page.locator("[data-testid='MAX_STOPS-all']").isChecked();
         if (!isChecked) {
-            System.out.println("El filtro 'MAX_STOPS-all' no está seleccionado.");
-            throw new RuntimeException("Test fallido: el filtro 'MAX_STOPS-all' no está seleccionado.");
+            System.out.println("The 'MAX_STOPS-all' filter is not selected.");
+            throw new RuntimeException("Failed test: the 'MAX_STOPS-all' filter is not selected.");
         }
         boolean isVisible = page.locator("[data-testid='resultPage-filterHeader-MAX_STOPSFilterResetButton-button']")
                 .isVisible();
 
         if (isVisible) {
-            System.out.println("El botón de restablecer filtro sigue visible.");
-            throw new RuntimeException("Test fallido: el botón de restablecer filtro sigue visible.");
+            System.out.println("The filter reset button is still visible.");
+            throw new RuntimeException("Failed test: the filter reset button is still visible.");
         }
 
-        System.out.println("Test completado correctamente: El filtro ha sido restablecido correctamente.");
+        System.out.println("Test completed successfully: The filter has been reset correctly.");
 
     }
 
@@ -126,12 +126,12 @@ public class filterScales {
                 // System.out.println("comienzo a validar: " + texto);
                 if (!(texto.equals("Vuelo directo"))) {
                     throw new RuntimeException(
-                            "Test SelfTransferFilter() fallido: se encontró una opción que no es un vuelo directo "
+                            "Test SelfTransferFilter() failed: an option that is not a direct flight was found "
                                     + texto);
                 }
             }
         }
-        System.out.println("Test completado: todas las opciones son vuelos directos.");
+        System.out.println("Test completed: all options are direct flights.");
     }
 
 }

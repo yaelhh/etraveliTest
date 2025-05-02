@@ -25,20 +25,20 @@ public class api {
             try {
                     if (response.status() != 200) {
                         throw new RuntimeException(
-                                "La respuesta esperada era un 200 pero se obtuvo " + response.status());
+                                "The expected response was 200 but received " + response.status());
                     }
 
                     String json = response.text();
                     System.out.println(
-                            "Test completado correctamente: Se recibió la respuesta esperada: " + response.status());
+                            "Test completed successfully: The expected response was received: " + response.status());
 
                     if (!json.contains("flights") || json.contains("errors")) {
                         throw new RuntimeException(
-                                " Test fallido: Respuesta inválida: faltan datos esperados o contiene errores");
+                                " Test failed: Invalid response, missing expected data or contains errors");
                     }
                     
                 } catch (Exception e) {
-                    System.err.println(" Excepción al procesar la respuesta: " + e.getMessage());
+                    System.err.println(" Exception while processing the response: " + e.getMessage());
                 }
             }
         });

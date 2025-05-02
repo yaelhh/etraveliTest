@@ -48,11 +48,11 @@ public class filterPrice {
         for (Locator price : listPrices) {
             String texto = price.innerText().replaceAll("\\D", "").trim(); // Eliminar caracteres no numéricos.trim();
             if (Double.parseDouble(texto) > value) {
-                throw new RuntimeException("Test fallido: El precio es mayor que el valor " + value);
+                throw new RuntimeException("Failed test: the price is higher than the expected value. " + value);
             }
         }
         System.out
-                .println("Test completado correctamente: todas las opciones tienen un precio menor o igual a " + value);
+                .println("Test completed successfully: all options have a price less than or equal to " + value);
     }
 
 }

@@ -53,13 +53,12 @@ public class traverlTime {
             int minutes = Integer.parseInt(minutesText.replaceAll("\\D", "").trim());
             if (hours > valueHour || (hours == valueHour && minutes > 0)) {
                 throw new RuntimeException(
-                        "Test fallido: Se encontró un vuelo con tiempo de viaje mayor a " + valueHour + " horas  ");
+                        "Test failed: A flight with a travel time greater than " + valueHour + " hours was found.");
             }
 
         }
         System.out.println(
-                "Test completado correctamente: Todos los vuelos tienen un tiempo de viaje menor a " + valueHour
-                        + " horas.");
+            "Test completed successfully: All flights have a travel time less than " + valueHour + " hours.");
     }
 
 }
